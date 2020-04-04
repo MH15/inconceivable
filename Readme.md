@@ -5,8 +5,8 @@
 <!-- [![Downloads Stats][npm-downloads]][npm-url] -->
 
 <!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat
-[npm-url]: https://img.shields.io/npm/v/inconceivable
+[npm-image]: https://img.shields.io/npm/v/inconceivable?style=flat
+[npm-url]: https://www.npmjs.com/package/inconceivable
 [npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat
 
 **inconceivable is under active development**
