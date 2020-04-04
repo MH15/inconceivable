@@ -2,7 +2,12 @@
 > a framework for modern web games
 
 [![NPM Version][npm-image]][npm-url]
-[![Downloads Stats][npm-downloads]][npm-url]
+<!-- [![Downloads Stats][npm-downloads]][npm-url] -->
+
+<!-- Markdown link & img dfn's -->
+[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat
+[npm-url]: https://img.shields.io/npm/v/inconceivable
+[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat
 
 **inconceivable is under active development**
 
@@ -68,8 +73,4 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
 
-<!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/inconceivable
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[wiki]: https://github.com/yourname/yourproject/wiki --> -->
+
