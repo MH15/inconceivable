@@ -5,6 +5,8 @@ import { IMap } from "./MapInterfaces"
 import { Vector2 } from "../Types/Vector"
 
 
+import * as PIXI from "pixi.js"
+
 
 export default class MapLoader {
     path: string = ""

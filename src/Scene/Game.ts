@@ -1,7 +1,7 @@
 import Scene from "./Scene"
 import Camera from "../GameObjects/Camera"
 import * as PIXI from "pixi.js"
-import Stats from "stats.js"
+// import Stats from "stats.js"
 import { resolve } from "dns"
 
 
@@ -12,13 +12,15 @@ import * as Matter from "matter-js"
 export default class Game {
     // only one instance of PIXI.Application per GameManager
     app: PIXI.Application
+
+
     // keyboard input events
     public events: Set<string>
     // scenes
     private scenes: Map<string, Scene>
 
     // stats
-    private stats: Stats
+    // private stats: Stats
 
     // camera
     camera: Camera
@@ -27,6 +29,9 @@ export default class Game {
     matterEngine = Matter.Engine.create()
 
     constructor(parent: HTMLElement) {
+        // global pixi instance
+        window.PIXI = PIXI
+
         let width = window.innerWidth
         let height = window.innerHeight
         this.app = new PIXI.Application({ width, height, backgroundColor: 0x111111 })

@@ -11,9 +11,11 @@ export default class Camera extends GameObject {
     constructor(name: string) {
         super(name)
         this.stage = new GameObject("stage:Empty")
+        console.log(this.stage)
     }
 
     addScene(scene: Scene) {
+        console.log("adding scene", scene.root)
         this.stage.addChild(scene.root)
     }
 

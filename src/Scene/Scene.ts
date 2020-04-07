@@ -33,6 +33,7 @@ export default class Scene extends EventEmitter implements IScene {
 
                 this.hierarchy.addChild(s)
             }
+            console.log(this.map)
             this.emit("scene:ready")
         }).catch(err => {
             console.log("error")

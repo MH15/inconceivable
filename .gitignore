@@ -64,3 +64,4 @@ typings/
 # Parcel related files
 dist/
 .cache/
+build/
