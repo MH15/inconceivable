@@ -123,7 +123,7 @@ export default class GameObject extends PIXI.Container {
 		let result = null
 
 		for (let child of this.children) {
-			console.log("child:", child)
+			// console.log("child:", child)
 			if (child.name == name) {
 				result = child
 				break

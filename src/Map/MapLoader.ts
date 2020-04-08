@@ -37,7 +37,7 @@ export default class MapLoader {
                         resolve("haha bitch")
                     })
                 } else {
-                    console.log("layers bad")
+                    throw new Error("Layer file defined incorrectly.")
                 }
             })
         })

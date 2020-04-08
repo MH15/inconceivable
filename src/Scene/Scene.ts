@@ -33,10 +33,9 @@ export default class Scene extends EventEmitter implements IScene {
 
                 this.hierarchy.addChild(s)
             }
-            console.log(this.map)
             this.emit("scene:ready")
         }).catch(err => {
-            console.log("error")
+            throw new Error("Map loader failed.")
             console.error(err)
         })
 
@@ -97,7 +96,7 @@ export default class Scene extends EventEmitter implements IScene {
                     result = rec(this.hierarchy, name)
 
                 } catch (err) {
-                    console.log(err)
+                    console.error(err)
                 }
             }
         } else {

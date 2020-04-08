@@ -51,7 +51,6 @@ export default class Game {
 
     addScene(name: string, scene: Scene) {
         this.scenes.set(name, scene)
-        // console.log(name, "LOADED", scene.waitForLoad)
         scene.sceneManager = this
 
         if (scene.waitForLoad) {

@@ -7,6 +7,12 @@ import * as Map from "./Map/MapLoader"
 import GameObject from "./GameObjects/GameObject"
 import Camera from "./GameObjects/Camera"
 
+import Matter from "matter-js"
+import MatterCollisionEvents from "./External/matter-collision-events"
+console.log(MatterCollisionEvents)
+Matter.use("matter-collision-events")
+
+
 
 let Inconceivable = {
     version: pjson.version,
@@ -14,11 +20,12 @@ let Inconceivable = {
     Scene: Scene,
     Map: Map,
     GameObject: GameObject,
-    Camera: Camera
+    Camera: Camera,
+    Matter: Matter
 }
 
 
-export { Game, Scene, Map, GameObject, Camera }
+export { Game, Scene, Map, GameObject, Camera, Matter }
 
 export default Inconceivable
 
