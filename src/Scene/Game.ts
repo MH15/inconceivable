@@ -28,7 +28,7 @@ export default class Game {
     // physics
     matterEngine = Matter.Engine.create()
 
-    constructor(parent: HTMLElement) {
+    constructor(parent: Element) {
         // global pixi instance
         window.PIXI = PIXI
 
@@ -51,7 +51,7 @@ export default class Game {
 
     addScene(name: string, scene: Scene) {
         this.scenes.set(name, scene)
-        scene.sceneManager = this
+        scene.game = this
 
         if (scene.waitForLoad) {
             scene.on("scene:ready", () => {

@@ -15,6 +15,9 @@ export default class MapLoader {
     map: IMap
     layers = new Map<string, GameObject[]>()
 
+    // list of all GameObjects
+    names: Set<string> = new Set();
+
     // layers to add to scene ASAP
     sceneLayers = new Set<GameObject>()
 
@@ -27,6 +30,7 @@ export default class MapLoader {
         return new Promise((resolve, reject) => {
             getJSON(this.path).then((json) => {
                 this.map = json
+
 
                 // validation
                 if (hasLayers(this.map) && layersValid(this.map)) {
@@ -49,6 +53,7 @@ export default class MapLoader {
             let layerArray: GameObject[] = []
             for (let object of layer.objects) {
                 let c = new GameObject("" || object.name)
+                this.names.add(object.name)
                 // position
                 c.position = new Vector2(object.x, object.y)
                 c.zIndex = object.z

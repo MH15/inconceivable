@@ -12,8 +12,8 @@ type UpdateFunction = (events) => void
 export default class Scene extends EventEmitter implements IScene {
     public keys: Set<string>
 
-    sceneManager: Game
-    private hierarchy: GameObject
+    game: Game
+    hierarchy: GameObject
 
     // TODO: comment on the event signals
     waitForLoad = true
@@ -35,8 +35,8 @@ export default class Scene extends EventEmitter implements IScene {
             }
             this.emit("scene:ready")
         }).catch(err => {
-            throw new Error("Map loader failed.")
             console.error(err)
+            throw new Error("Map loader failed.")
         })
 
         // start listeners for keyboard events
@@ -116,7 +116,7 @@ export default class Scene extends EventEmitter implements IScene {
 
 
 interface IScene {
-    sceneManager: Game
+    game: Game
     Update(delta: number): void
     Start(): void
 }
