@@ -76,5 +76,6 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 - [x] Error if Sprite in level file cannot be found in spritesheet.
 - [x] Don't require hard reload on level file change.
 - [x] Create a Base Class for GameObjects with Physics support
+  - [ ] Remove Physics methods from GameObject
 - [ ] audio support
 - [ ] global configuration file (`inconceivable.json`)
