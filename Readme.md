@@ -79,3 +79,4 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
   - [ ] Remove Physics methods from GameObject
 - [ ] audio support
 - [ ] global configuration file (`inconceivable.json`)
+- [ ] change `Game()` constructor to take query string instead of HTMLElement.

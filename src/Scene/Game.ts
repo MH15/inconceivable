@@ -28,13 +28,18 @@ export default class Game {
     // physics
     matterEngine = Matter.Engine.create()
 
-    constructor(parent: Element) {
+    constructor(queryString: string) {
         // global pixi instance
         window.PIXI = PIXI
 
         let width = window.innerWidth
         let height = window.innerHeight
         this.app = new PIXI.Application({ width, height, backgroundColor: 0x111111 })
+
+        let parent = <HTMLElement>document.querySelector(queryString)
+        if (!parent) {
+            throw new Error(`Cannot find element with query string "${queryString}".`)
+        }
         parent.appendChild(this.app.view)
         // (<any>window).app = this.app
 
