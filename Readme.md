@@ -70,3 +70,11 @@ Created by Matt Hall - [@matthallosu](https://twitter.com/matthallosu) - matthew
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
 
+
+
+## TODO
+- [x] Error if Sprite in level file cannot be found in spritesheet.
+- [x] Don't require hard reload on level file change.
+- [x] Create a Base Class for GameObjects with Physics support
+- [ ] audio support
+- [ ] global configuration file (`inconceivable.json`)

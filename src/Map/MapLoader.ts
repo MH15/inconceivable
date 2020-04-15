@@ -65,7 +65,12 @@ export default class MapLoader {
                 // image
                 if (object.img) {
                     let tex = this.spritesheet.textures[object.img]
-                    c.loadSprite(tex)
+
+                    if (tex) {
+                        c.loadSprite(tex)
+                    } else {
+                        throw new Error(`Sprite named "${object.img}" not found in spritesheet "${this.spritesheetPath}"`)
+                    }
                 }
 
                 // add object to layer root
