@@ -7,6 +7,7 @@ import * as Map from "./Map/MapLoader"
 import GameObject from "./GameObjects/GameObject"
 import PhysicsObject from "./GameObjects/PhysicsObject"
 import Camera from "./GameObjects/Camera"
+import { Vector2, Vector3 } from "./Types/Vector"
 
 import Matter from "matter-js"
 import MatterCollisionEvents from "./External/matter-collision-events"
@@ -23,11 +24,13 @@ let Inconceivable = {
     GameObject: GameObject,
     PhysicsObject: PhysicsObject,
     Camera: Camera,
-    Matter: Matter
+    Matter: Matter,
+    Vector2,
+    Vector3
 }
 
 
-export { Game, Scene, Map, GameObject, PhysicsObject, Camera, Matter }
+export { Game, Scene, Map, GameObject, Vector2, Vector3, PhysicsObject, Camera, Matter }
 
 export default Inconceivable
 

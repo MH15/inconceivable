@@ -74,9 +74,13 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 
 ## TODO
 - [x] Error if Sprite in level file cannot be found in spritesheet.
+  - [ ] Error on corrupted JSON.
+  - [ ] Add a level layer property to allow nonrendered objects
 - [x] Don't require hard reload on level file change.
+  - [ ] Make Parcel hot reload on JSON changes
 - [x] Create a Base Class for GameObjects with Physics support
   - [ ] Remove Physics methods from GameObject
 - [ ] audio support
+- [ ] Support Z index of layers
 - [ ] global configuration file (`inconceivable.json`)
 - [ ] change `Game()` constructor to take query string instead of HTMLElement.

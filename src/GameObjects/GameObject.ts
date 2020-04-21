@@ -14,22 +14,20 @@ import { round } from "../Utils/math"
 export default class GameObject extends PIXI.Container {
 	name: string
 	sprite: PIXI.Sprite
-	velocity: Vector2
+	spritePath: string
+
+	// for non-Matter physics
+	velocity: Vector2 = new Vector2()
+	// for Matter physics
 	body: Matter.Body
 
 	constructor(name: string) {
 		super()
 		this.name = name
-		this.physics = true
 
 		this.sortableChildren = true
 	}
 
-	set physics(setting: boolean) {
-		if (setting) {
-			this.velocity = new Vector2()
-		}
-	}
 
 	addPhysics(tag: string, collision: Matter.ICollisionFilter, options?: OptionsObject): Matter.Body {
 		let optionsObj: Matter.IBodyDefinition = {
@@ -71,6 +69,23 @@ export default class GameObject extends PIXI.Container {
 		})
 	}
 
+	// Perhaps refactor into a class that extends
+	// GameObject called PhysicsObject or something
+	// later, but for now this should be ok.
+	onCollideEnd(callback: Function) {
+		// @ts-ignore
+		this.body.onCollideEnd((event) => {
+			let self = event.bodyA
+			let other = event.bodyB
+			if (self.label != this.body.label) {
+				self = event.bodyB
+				other = event.bodyA
+			}
+			let tag: string = other.label.split(":")[0]
+			callback(tag, self, other)
+		})
+	}
+
 
 	updatePhysics() {
 		// copy properties from physics to renderer
@@ -82,6 +97,7 @@ export default class GameObject extends PIXI.Container {
 	loadAsset(path: string) {
 		// TODO: implement spritesheets
 		let spriteChild = PIXI.Sprite.from(path)
+		this.spritePath = path
 		// by default pivot sprites around the center
 		spriteChild.anchor.x = 0.5
 		spriteChild.anchor.y = 0.5
@@ -136,6 +152,18 @@ export default class GameObject extends PIXI.Container {
 			result = result || newResult
 		}
 		return result
+	}
+
+	clone(): GameObject {
+		let copy = new GameObject(this.name)
+
+		copy.position = this.position
+		copy.rotation = this.rotation
+		copy.scale = this.scale
+
+		copy.loadSprite(this.spritePath)
+
+		return copy
 	}
 
 	log() {
