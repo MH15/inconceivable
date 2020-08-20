@@ -11,7 +11,7 @@
 Inconceivable attempts to provide a framework for rapid game development that
 promotes modern JavaScript and Typescript.
 
-**inconceivable is under active development**
+**inconceivable is under development, and not a production project**
 
 <!-- ![](header.png) -->
 
